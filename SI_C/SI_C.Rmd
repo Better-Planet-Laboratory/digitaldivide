@@ -1,0 +1,371 @@
+---
+title: |
+  | Mehrabi et al. 2020. The global divide in data driven farming. Supplementary Information C: Geospatial overlays
+author: "Code by Christian Levers"
+date: "20 July 2020"
+output: 
+  pdf_document:
+    toc: true
+    toc_depth: 3
+    number_sections: true
+urlcolor: blue
+bibliography: [My_Library.bib, R_packages.bib]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,
+                      tidy.opts = list(width.cutoff=30),
+                      tidy = TRUE)
+knitr::opts_knit$set(root.dir = "./")
+setwd("./")
+```
+
+```{r wrap-hook, include=FALSE}
+library(knitr)
+hook_output = knitr::knit_hooks$get('output')
+knitr::knit_hooks$set(output = function(x, options) {
+  # this hook is used only when the linewidth option is not NULL
+  if (!is.null(n <- options$linewidth)) {
+    x = knitr:::split_lines(x)
+    # any lines wider than n should be wrapped
+    if (any(nchar(x) > n)) x = strwrap(x, width = n)
+    x = paste(x, collapse = '\n')
+  }
+  hook_output(x, options)
+})
+```
+
+\pagebreak
+
+# Reproducibility
+We use the \textbf{R} packages \texttt{knitr} [@R-knitr] and \texttt{checkpoint} [@R-checkpoint]. The package \texttt{knitr} facilitates producing a dynamic document that contains all the steps required to analyze the data. \texttt{checkpoint()} will install all packages versions that we used in our analysis to avoid result discrepancies that may arise from software differences. Thus the reader is provided with all the code to fully reproduce the analysis, and adapt it for other analyses.
+```{r make_checkpoint, include=TRUE, echo=TRUE, message=FALSE, eval=FALSE}
+require("checkpoint")
+checkpoint(snapshotDate = "2020-07-20")
+```
+
+```{r create_package_bib, include=FALSE, echo=TRUE, message=FALSE}
+knitr::write_bib(c("raster","rgdal","sp","sf","fasterize", "knitr", "checkpoint"), "R_packages.bib")
+```
+
+For the analysis in this document we will be using the \texttt{raster} [@R-raster], \texttt{rgdal} [@R-rgdal], \texttt{sp} [@R-sp], \texttt{sf} [@R-sf], and \texttt{fasterize} [@R-fasterize] packages. 
+```{r load_packages, message=FALSE, warning=FALSE}
+packages <- c("raster","rgdal","sp","sf","fasterize")
+invisible(lapply(packages, require, character.only = TRUE))
+```
+
+# Aims 
+This purpose of this document is to describe how we created a set of geospatial layers to assess the gaps in coverage of mobile network coverage for  agricultural areas and vulnerable human populations targeted for data driven farming or health interventions. Specifically we will create seven key geospatial layers of global extent representing:
+
+1. Hotspots of rainfall-dependent croplands (defined as the 90th percentile of the ratio of green water to total water used for crop production).
+2. Arid cropland areas (defined as regions with annual precipitation <250mm).
+3. The number of persons infected by Plasmodium falciparum.
+4. Hotspots of yield gaps for four major crops (defined as the 90th percentile of the ratio of yield gaps to yield potentials).
+5. Cropland areas with nutrient deficits for 17 major crops.
+6. The number of food insecure persons (we used the prevalence of childhood stunting to proxy food insecurity).
+7. The number of people with low well-being levels (defined as the 10th percentile of the subnational human development index).
+
+The creation of these layers is a simple three step process. First we define a set of reference layers for cropland areas and human populations. Second we create a set of indicator layers representing the outcomes of interest in binary or prevalence units. Finally, we multiply the indicator layer by the reference layers to create the final output layers which represent absolute values of areas or people affected by each indicator.
+}
+
+
+# Load and preprocess data
+
+## Reference data
+
+### Population count
+To represent population counts, we used LandScan 2017 (https://landscan.ornl.gov/documentation) ambient population distribution [@rose_landscan_2018], which we aggregated to the target resolution for population based indicators ([Malaria risk], [Malnutrition], [Subnational human development index]) and areas based indicators ([Rainfall dependency], [Arid Environments], [Yield gaps], and [Nitrogen deficiency]) by calculating sums per grid cell.
+```{r popcount}
+PopCount_LandScan_25km2 <- raster::raster("./_00_ReferenceLayers/Population/ls_pop_25km2.tif")
+PopCount_LandScan_100km2 <- raster::raster("./_00_ReferenceLayers/Population/ls_pop_100km2.tif")
+PopCount_LandScan_100km2
+# Target resolution
+target_reso_pop25 <- raster::res(PopCount_LandScan_25km2)
+target_reso_pop100 <- raster::res(PopCount_LandScan_100km2)
+
+```
+
+### Cropland area
+To represent cropland area, we used two different data sets that matched the respective indicator data. For [Rainfall dependency], we used crop area and harvested crop area [ha] for the year 2000 [@siebert_quantifying_2010]. For [Yield gaps], we used  harvested crop area [ha] for the four main crops maize, rice, soy, and wheat for the year 2000 [@monfreda_farming_2008]. For all other indicators, we used crop area [ha] calculated from cropland cover [%] for the year 2000 [@ramankutty_farming_2008]. All three data sources share the same spatial resolution, which we set as the target resolution for area-based indicators ([Rainfall dependency], [Arid Environments], [Yield gaps], and [Nitrogen deficiency]).
+```{r croparea}
+# Siebert and Döll 2010
+CropArea_MIRCA <- raster::raster("./_00_ReferenceLayers/Cropland/cropland_mirca.asc")
+HarvArea_rf_MIRCA <- raster::raster("./_00_ReferenceLayers/IrrigatedArea/area_harv_rf_allcrops_ha.asc")
+
+# Monfreda, Ramankutty, and Foley 2008
+CropArea_maize <- raster::raster("./_00_ReferenceLayers/Cropland/maize_HarvestedAreaHectares.tif")
+CropArea_rice <- raster::raster("./_00_ReferenceLayers/Cropland/rice_HarvestedAreaHectares.tif")
+CropArea_soy <- raster::raster("./_00_ReferenceLayers/Cropland/soybean_HarvestedAreaHectares.tif")
+CropArea_wheat <- raster::raster("./_00_ReferenceLayers/Cropland/wheat_HarvestedAreaHectares.tif")
+CropArea_Top4Crops <- list(CropArea_maize,CropArea_rice,CropArea_soy,CropArea_wheat)
+
+# Ramankutty et al. 2008
+CropCover_EarthStat <- raster::raster("./_00_ReferenceLayers/Cropland/Cropland2000_5m.tif")
+CellSize_EarthStat_km <- raster::area(CropCover_EarthStat)
+CellSize_EarthStat_ha <- CellSize_EarthStat_km * 100
+CropArea_EarthStat <- CropCover_EarthStat * CellSize_EarthStat_ha
+
+# Target resolution
+target_reso_area <- raster::res(CropArea_EarthStat)
+target_reso_area
+```
+
+### Define target extent
+```{r target_ext}
+target_ext <- raster::extent(CropArea_EarthStat)
+target_ext
+```
+
+
+## Indicators
+
+### Rainfall dependency
+To represent rainfall dependency, we used the consumptive crop water use of green water [mm/a] for the year 2000 [@siebert_quantifying_2010]. Data represented the average between 1998-2002.
+
+```{r rain}
+green_water <- raster::raster("./_01_Rainfall_dependence/cwu_green_rainfed.asc")
+```
+
+### Arid Environments
+To represent arid environments, we used annual precipitation sums [mm/a] from the CHELSA data base [@karger_climatologies_2017], which we harmonized to the target extent and aggregated to the target resolution (area-based) by calculating the mean per grid cell.
+```{r precip}
+precip <- raster::raster("./_02_HeatDrought/precip_FINAL_100km2.tif")
+```
+
+### Malaria risk
+To represent malaria risk, we used the nnual mean of Plasmodium falciparum incidence [%] in 2017 [@weiss_mapping_2019].
+```{r malaria}
+pf_inci <- raster::raster("./_03_MalariaRisk/2019_Global_Pf_Incidence_2017_FINAL.tif")
+```
+
+### Yield gaps
+To represent yield gaps, we used yield gap data for 16 major crops [t/ha] for the year 2000 [@mueller_closing_2012]. Data represented averages of census data between 1997-2003. We extracted data for the four major crops maize, rice, soy, and wheat and calculated yield gap fractions by calculating the quotient between actual yield gap and potential yields for each crop type individually.
+```{r yield_gap}
+folder_list <- as.list(list.dirs("./_04_YieldGap", full.names = TRUE, recursive = FALSE))
+
+yield_gap_All16Crops <- list()
+yield_pot_All16Crops <- list()
+
+# load yield gap raster data and store in list
+for(i in 1:length(folder_list)){
+  # get all files for crop i
+  temp_ras_list <- list.files(folder_list[[i]], pattern = "\\.tif$", full.names = TRUE)
+  
+  # select yield gap (2) and yield potential (3)
+  temp_ras_gap <- temp_ras_list[[2]]
+  temp_ras_pot <- temp_ras_list[[3]]
+  
+  # read raster
+  yield_gap_All16Crops[[i]] <- raster::raster(temp_ras_gap)
+  yield_pot_All16Crops[[i]] <- raster::raster(temp_ras_pot)
+}
+
+# select only main crop types (production): maize (4), rice (9), soybean (12), wheat (16)
+yield_gap_Top4Crops <- list(yield_gap_All16Crops[[4]],yield_gap_All16Crops[[9]],
+                            yield_gap_All16Crops[[12]],yield_gap_All16Crops[[16]])
+yield_pot_Top4Crops <- list(yield_pot_All16Crops[[4]],yield_pot_All16Crops[[9]],
+                            yield_pot_All16Crops[[12]],yield_pot_All16Crops[[16]])
+
+# calculate yield gap fractions
+yield_gap_fraction_Top4Crops <- list()
+
+for(i in 1:length(yield_gap_Top4Crops)){
+  temp_gap <- yield_gap_Top4Crops[[i]]
+  temp_pot <- yield_pot_Top4Crops[[i]]
+  temp_frac <- temp_gap / temp_pot
+  yield_gap_fraction_Top4Crops[[i]] <- temp_frac
+}
+```
+
+### Nitrogen deficiency
+To represent nitrogen deficiency, we used the nitrogen balance [kg] for 140 crops for the year 2000 [@west_leverage_2014]. To only account for deficiencies, we set all positive values to *NA*. 
+```{r n_def}
+nitro_bal <- raster::raster("./_05_FertilizerBalance//NitrogenBalanceOnLandscape_140Crops.tif")
+nitro_def <- nitro_bal; nitro_def[] <- ifelse(nitro_def[] < 0, nitro_def[], NA)
+```
+
+### Malnutrition
+To represent malnutrition, we used the distribution of poor population [persons/km2] in developing countries, based on stunting among children [@fao_state_2011]. We further used the prevalence of malnutrition [%] across the African continent for the year 2015 [@osgood-zimmerman_mapping_2018] to increase thematic coverage. We used three indicators of malnutrition for our analysis: stunting, wasting, and underweight.
+```{r malnut}
+stunt_glob <- raster::raster("./_06_Malnutrition/FAO_stunting_popdens.tif")
+stunt <- raster::raster("./_06_Malnutrition/stunt_africa_FINAL.tif")
+underweight <- raster::raster("./_06_Malnutrition/underweight_africa_FINAL.tif")
+wasting <- raster::raster("./_06_Malnutrition/wasting_africa_FINAL.tif")
+```
+
+### Subnational human development index
+To represent human development, we used the sub-national human development index [SHDI, @smits_subnational_2019]. The SHDI is a dimensionless, statistic composite index of life expectancy, education, and per-capita income. We converted SHDI data from its original polygon format to a spatial raster by assuming spatial homogeneity of the indicator within administrative units.
+```{r shdi, message=FALSE}
+shdi_data <- utils::read.csv("./_07_SHDI/SHDI_Complete_3.0.csv",stringsAsFactors=FALSE)
+
+# remove national totals 
+shdi_data_clean <- shdi_data[-which(shdi_data$level == "National"),]
+
+# select entries target year 2010 (most complete cases)
+shdi_data_clean_2010 <- shdi_data_clean[which(shdi_data_clean$year == 2010),]
+
+# load shapefile with GDL (Global Data Lab) codes for joining
+gdl_shp <- sf::st_read("./_07_SHDI/GDL-SHDI-SHP-2/GDL-SHDI-SHP-2.shp", quiet = TRUE)
+
+# join data to shapefile (and export)
+gdl_shdi_2010 <- merge(gdl_shp, shdi_data_clean_2010, 
+                       by.x = "GDLCode", by.y = "GDLCODE")
+
+# rasterize SHDI column
+shdi_ras_2010 <- fasterize::fasterize(gdl_shdi_2010, CropCover_EarthStat, 
+                                      field = "shdi", fun="first")
+```
+
+# Spatial Overlay
+We performed two separate analyses: 1) for area-based indicators, and 2) for population-based indicators.
+
+1. Area-based indicators
+  + Step 1: Create hotspot maps for rainfall dependency and yield gaps using the highest decile of the indicator's distribution. For aridity, we used a fixed threshold value of 250mm precipitation per year. For nitrogen deficiency, we used the full data distribution. The resulting maps are binary layers.
+  + Step 2: Mask binary indicator hotspot maps to cropland extent (threshold: minimum 1ha cropland area).
+  + Step 3: Multiply masked binary indicator hotspot maps with harvested crop area to obtain area estimates of cropland affected by each indicator.
+2. Population-based indicators
+  + Step 1: Create hotspot map for SHDI using the lowest decile of the indicator's distribution. The resulting map is a binary layer.
+  + Step 2: Multiply indicator maps (incidence of child stunting and prevalence of malaria infecions, and the presence of low human development) with population count data to obtain estimates of the number persons affected.
+
+
+## Area-based indicators
+
+### Map indicator hotspots using global thresholds (deciles or fixed)
+```{r area_based1}
+### Rainfall dependency
+green_water_hotspot <- green_water
+
+# convert 0 to NA to not bias quantile calculation
+green_water_hotspot[] <- ifelse(green_water_hotspot[] == 0, 
+                                NA, green_water_hotspot[]) 
+
+# create binary mask using the top decile (i.e., highest crop water use) 
+green_water_hotspot[] <- ifelse(green_water_hotspot[] >= 
+                                  raster::quantile(green_water_hotspot, probs = 0.9)[[1]], 1, 0) 
+
+
+### Arid environments
+precip_hotspot <- precip
+
+# define arid environments with precipitation below 250mm/a
+precip_hotspot[] <- ifelse(precip_hotspot[] <= 250, 1, 0)
+
+
+### Yield gaps
+yield_gap_hotspot_list <- list()
+
+# loop through list of four major crops and create binary masks using the top decile 
+# (i.e., largest yield gap fraction) 
+for(i in 1:length(yield_gap_fraction_Top4Crops)){
+  # create temporary raster
+  temp_ras <- yield_gap_fraction_Top4Crops[[i]]
+  
+  # create binary mask of top decile (i.e., highest yield gap fraction)
+  temp_ras[] <- ifelse(temp_ras[] >= raster::quantile(temp_ras, probs = 0.9)[[1]], 1, 0)
+  
+  # convert NAs to 0 for summarizing
+  temp_ras[is.na(temp_ras[])] <- 0
+  
+  # store in list
+  yield_gap_hotspot_list[[i]] <- temp_ras
+}
+
+
+### Nitrogen deficiency
+nitro_def_hotspot <- nitro_def
+
+# create binary mask using all grid cells which are nitrogen deficient.
+nitro_def_hotspot[] <- ifelse(nitro_def_hotspot[] < 0, 1, 0)
+```
+
+### Mask with cropland layer
+```{r area_based2}
+# create cropland masks using cut-off value of minimum 1ha per 10x10km grid cell
+CropArea_MIRCA_mask1ha <- CropArea_MIRCA
+CropArea_MIRCA_mask1ha[] <- ifelse(CropArea_MIRCA_mask1ha[] > 1, 1, NA)
+
+CropArea_EarthStat_mask1ha <- CropArea_EarthStat
+CropArea_EarthStat_mask1ha[] <- ifelse(CropArea_EarthStat_mask1ha[] > 1, 1, NA)
+
+# mask indicator hotspots to cropland extent
+green_water_hotspot_CLmask <- green_water_hotspot * CropArea_MIRCA_mask1ha
+precip_hotspot_CLmask <- precip_hotspot * CropArea_EarthStat_mask1ha
+nitro_def_hotspot_CLmask <- nitro_def_hotspot * CropArea_EarthStat_mask1ha
+yield_gap_hotspot_CLmask <- list()
+for(i in 1:length(yield_gap_hotspot_list)){
+  yield_gap_hotspot_CLmask[[i]] <- yield_gap_hotspot_list[[i]] * CropArea_EarthStat_mask1ha
+}
+```
+
+### Multiply cropland area layers with masked hotspot layers
+```{r area_based3}
+greenH2O_FINAL <- green_water_hotspot_CLmask * HarvArea_rf_MIRCA
+aridity_FINAL <- precip_hotspot_CLmask * CropArea_EarthStat
+Ndeficit_FINAL <- nitro_def_hotspot_CLmask * CropArea_EarthStat
+yield_gap_hotspot_area <- list()
+for(i in 1:length(yield_gap_hotspot_CLmask)){
+  # multiply yield gap hotspots with respective harvested crop area
+  yield_gap_hotspot_area[[i]] <- yield_gap_hotspot_CLmask[[i]] * CropArea_Top4Crops[[i]]
+}
+# calculate area sums for the four major crops
+yieldgap_FINAL <- yield_gap_hotspot_area[[1]] + yield_gap_hotspot_area[[2]] + 
+                  yield_gap_hotspot_area[[3]] + yield_gap_hotspot_area[[4]]
+```
+
+## Population-based indicators
+
+### Map SHDI hotspots
+```{r pop_based1}
+shdi_hotspot <- shdi_ras_2010
+shdi_hotspot[] <- ifelse(shdi_hotspot[] <= raster::quantile(shdi_hotspot, probs = 0.1)[[1]], 1, 0) 
+shdi_hotspot
+```
+
+### Multiply population counts with hotspot/prevalence layers
+```{r pop_based2}
+pf_ppl_glob <- pf_inci * PopCount_LandScan_25km2
+stunt_ppl_AFR <- stunt * PopCount_LandScan_25km2
+underweight_ppl_AFR <- underweight * PopCount_LandScan_25km2
+wasting_ppl_AFR <- wasting * PopCount_LandScan_25km2
+shdi_ppl_glob <- shdi_hotspot * PopCount_LandScan_100km2
+```
+
+### Multiply global stunting [pers/km2] with grid cell area [km] to obtain absolute numbers
+```{r pop_based3}
+stunt_ppl_glob <- stunt_glob * CellSize_EarthStat_km
+```
+
+
+## Export final maps
+```{r export_raster, warning = FALSE, message = FALSE}
+raster::writeRaster(greenH2O_FINAL,format="GTiff",overwrite=TRUE,
+                    "./RESULTS/AREA_BASED/greenH2O.tif")
+raster::writeRaster(aridity_FINAL,format="GTiff",overwrite=TRUE,
+                    "./RESULTS/AREA_BASED/aridity.tif")
+raster::writeRaster(Ndeficit_FINAL,format="GTiff",overwrite=TRUE,
+                    "./RESULTS/AREA_BASED/Ndeficit.tif")
+raster::writeRaster(yieldgap_FINAL,format="GTiff",overwrite=TRUE,
+                    "./RESULTS/AREA_BASED/yieldgap.tif")
+
+raster::writeRaster(pf_ppl_glob,format="GTiff",overwrite=TRUE,
+                    "./RESULTS/POP_BASED/malaria_ppl_glob.tif")
+raster::writeRaster(stunt_ppl_glob,format="GTiff",overwrite=TRUE,
+                    "./RESULTS/POP_BASED/stunt_ppl_glob.tif")
+raster::writeRaster(stunt_ppl_AFR,format="GTiff",overwrite=TRUE,
+                    "./RESULTS/POP_BASED/stunt_ppl_AFR.tif")
+raster::writeRaster(underweight_ppl_AFR,format="GTiff",overwrite=TRUE,
+                    "./RESULTS/POP_BASED/underweight_ppl_AFR.tif")
+raster::writeRaster(wasting_ppl_AFR,format="GTiff",overwrite=TRUE,
+                    "./RESULTS/POP_BASED/wasting_ppl_AFR.tif")
+raster::writeRaster(shdi_ppl_glob,format="GTiff",overwrite=TRUE,
+                    "./RESULTS/POP_BASED/shdi_ppl_glob.tif")
+```
+
+# Session info
+```{r session_info}
+sessionInfo()
+```
+
+\pagebreak
+
+# References

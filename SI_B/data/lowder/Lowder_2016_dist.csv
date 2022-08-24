@@ -1,0 +1,223 @@
+Country,Census Year,Holdings/ agricultural area,Total,0_1,1_2,2_5,5_10,10_20,20_50,50_100,100_200,200_500,500_1000,1000_5000,Income,Region
+Myanmar,2003,Agricultural area (Ha) ,8721115,478102,1181560,3239363,2496993,1105838,219259,,,,,,Low-income,East Asia and the Pacific
+Kyrgyzstan,2002,Agricultural area (Ha) ,1306787,107686,99503,202144,124305,104293,120590,49839,42044,76349,120652,259382,Low-income,Europe and Central Asia
+Nepal,2002,Agricultural area (Ha) ,2654037,1031944,791965,636171,139750,54207,,,,,,,Low-income,South Asia
+Burkina Faso,1993,Agricultural area (Ha) ,3472480,62504,256963,1201476,1274404,677133,,,,,,,Low-income,Sub-Saharan Africa
+Democratic Republic of the Congo,1990,Agricultural area (Ha) ,2387700,1500400,552500,334800,,,,,,,,,Low-income,Sub-Saharan Africa
+Ethiopia ,2001-2002,Agricultural area (Ha) ,11047249,2993645,3682947,3605515,612070,153072,,,,,,,Low-income,Sub-Saharan Africa
+Guinea ,1995,Agricultural area (Ha) ,895620,87884,200059,375193,232484,,,,,,,,Low-income,Sub-Saharan Africa
+Uganda,1991,Agricultural area (Ha) ,3683288,404609,581608,913153,671031,1112887,,,,,,,Low-income,Sub-Saharan Africa
+Fiji,1991,Agricultural area (Ha) ,591407,11358,16132,65189,87283,85334,98141,95471,132499,,,,Lower-middle-income,East Asia and the Pacific
+Indonesia,1993,Agricultural area (Ha) ,17145036,5105398,4254082,5754989,1442915,587652,,,,,,,Lower-middle-income,East Asia and the Pacific
+Korea Rep. of ,1990,Agricultural area (Ha) ,1857491,567691,765943,523857,,,,,,,,,High-income,East Asia and the Pacific
+Lao People's Democratic Republic,1998-1999,Agricultural area (Ha) ,1047700,133800,314800,599100,,,,,,,,,Lower-middle-income,East Asia and the Pacific
+Philippines,2002,Agricultural area (Ha) ,9559958,827031,1635995,3143996,1914396,965695,1072845,,,,,,Lower-middle-income,East Asia and the Pacific
+Samoa,1999,Agricultural area (Ha) ,53382,1108,5954,13408,11970,9553,11389,,,,,,Lower-middle-income,East Asia and the Pacific
+Thailand ,1993,Agricultural area (Ha) ,19002071,574967,1721244,6403613,5926035,2520596,976842,878774,,,,,Upper-middle-income,East Asia and the Pacific
+China,1997,Agricultural area (Ha) ,130039200,,,,,,,,,,,,Upper-middle-income,East Asia and the Pacific
+Viet Nam,2001,Agricultural area (Ha) ,7633882,,,,,,,,,,,,Lower-middle-income,East Asia and the Pacific
+Albania,1998,Agricultural area (Ha) ,1889498,128508,198921,1562069,,,,,,,,,Upper-middle-income,Europe and Central Asia
+Bulgaria,2003,Agricultural area (Ha) ,2904500,192600,,241900,,,191100,2278900,,,,,Upper-middle-income,Europe and Central Asia
+Georgia,2003-2004,Agricultural area (Ha) ,886766,213266,207570,108584,42663,35453,35833,33029,42393,71796,96179,,Lower-middle-income,Europe and Central Asia
+Latvia ,2001,Agricultural area (Ha) ,3586200,,16100,117800,285800,626500,1113100,645300,337100,203000,241500,,Upper-middle-income,Europe and Central Asia
+Lithuania,2003,Agricultural area (Ha) ,2939100,100,32000,407700,443700,520700,504600,244000,183200,182300,420800,,Upper-middle-income,Europe and Central Asia
+Luxembourg,1999-2000,Agricultural area (Ha) ,137600,,450,1170,2170,3700,21070,69700,39340,,,,High-income,Europe and Central Asia
+Malta,2001,Agricultural area (Ha) ,9656,3196,2404,2805,931,320,,,,,,,High-income,Europe and Central Asia
+Poland,2002,Agricultural area (Ha) ,19324800,537400,892300,2435000,3505200,4126700,3003600,937500,517700,854100,819300,1696000,High-income,Europe and Central Asia
+Portugal,1999,Agricultural area (Ha) ,5188955,146386,331130,544666,446878,502468,506326,360662,2350439,,,,High-income,Europe and Central Asia
+Romania,2002,Agricultural area (Ha) ,15707957,770666,1274151,3168392,1740279,615560,315125,264244,7559540,,,,Upper-middle-income,Europe and Central Asia
+Serbia,2002,Agricultural area (Ha) ,1919423,89994,167954,574813,631747,316213,138702,,,,,,Upper-middle-income,Europe and Central Asia
+Sweden,1999-2000,Agricultural area (Ha) ,7641890,,124030,294800,709200,1055310,1894610,1694860,1869080,,,,High-income,Europe and Central Asia
+Switzerland ,1990,Agricultural area (Ha) ,1262167,8236,12760,39985,117567,456887,539443,70112,17177,,,,High-income,Europe and Central Asia
+Turkey,2001,Agricultural area (Ha) ,18434822,243446,737802,2953162,3812703,4388440,4207550,1121855,446939,170308,352617,,Upper-middle-income,Europe and Central Asia
+United Kingdom,1999-2000,Agricultural area (Ha) ,16527630,,46900,86400,206600,471530,1662100,2711940,11342160,,,,High-income,Europe and Central Asia
+Hungary,2000,Agricultural area (Ha) ,6448000,,,,,,,,,,,,High-income,europe and Central Asia
+Austria,1999-2000,Agricultural area (Ha) ,6804610,,148860,357340,656790,1208900,1636300,650490,2145930,,,,High-income,High-income 
+Belgium,1999-2000,Agricultural area (Ha) ,1426780,,12380,30860,62870,153600,551060,425130,190880,,,,High-income,High-income 
+Croatia,2003,Agricultural area (Ha) ,1391622,81982,103484,276780,294253,210401,424722,,,,,,High-income,High-income 
+Cyprus,2003,Agricultural area (Ha) ,156380,9954,10633,22554,19652,21197,25723,17951,28716,,,,High-income,High-income 
+Czech Republic,2000,Agricultural area (Ha) ,3643168,5137,11924,29879,43318,74474,134779,128596,154665,289745,555147,2215504,High-income,High-income 
+Denmark,1999-2000,Agricultural area (Ha) ,2878730,,3140,5350,79990,185360,599480,853950,1151460,,,,High-income,High-income 
+Estonia,2001,Agricultural area (Ha) ,875799,4694,19631,52658,76356,107814,125751,66346,422549,,,,High-income,High-income 
+Finland,1999-2000,Agricultural area (Ha) ,5865530,,62800,168550,416110,1092980,2500220,1196790,428080,,,,High-income,High-income 
+France,1999-2000,Agricultural area (Ha) ,29897670,,212000,395120,564790,1250550,5176970,9148280,13149960,,,,High-income,High-income 
+Germany,1999-2000,Agricultural area (Ha) ,19097990,,63885,410018,714453,1578673,4270457,4078209,2322179,1540487,1182704,2936925,High-income,High-income 
+Greece,1999-2000,Agricultural area (Ha) ,3875180,,442040,797380,791000,739860,707980,225720,171200,,,,High-income,High-income 
+Guam,2002,Agricultural area (Ha) ,667,18,27,119,142,117,243,,,,,,High-income,High-income 
+Ireland,2000,Agricultural area (Ha) ,4714970,,5210,37360,141680,543020,1864840,1366740,756120,,,,High-income,High-income 
+Italy,2000,Agricultural area (Ha) ,19607094,472729,696959,1674692,1831387,2200929,3155271,2136698,7438429,,,,High-income,High-income 
+Japan,1995,Agricultural area (Ha) ,4120000,1037000,948000,894000,316000,287000,423000,215000,,,,,High-income,High-income 
+Netherlands,1999-2000,Agricultural area (Ha) ,2239290,,22050,59780,123700,272710,954960,490220,315870,,,,High-income,High-income 
+Norway,1999,Agricultural area (Ha) ,1038246,338,3501,37800,121246,322217,444725,91889,14766,1765,,,High-income,High-income 
+Canada,1991,Agricultural area (Ha) ,67753700,,,,,,,,,,,,High-income,High-income 
+New Zealand,2002,Agricultural area (Ha) ,15640348,,,,,,,,,,,,High-income,High-income 
+Slovakia,2001,Agricultural area (Ha) ,3462487,,,,,,,,,,,,High-income,High-income 
+Slovenia,1991,Agricultural area (Ha) ,912013,,,,,,,,,,,,High-income,High-income 
+Spain,1999,Agricultural area (Ha) ,42180951,,,,,,,,,,,,High-income,High-income 
+Australia,1990,Agricultural area (Ha) ,,,,,,,,,,,,,High-income,High-income 
+Argentina ,1988,Agricultural area (Ha) ,177437398,,,148000,247140,612991,2053096,3646960,6929412,15290155,14870541,133639103,Upper-middle-income,Latin America and the Caribbean
+Bahamas ,1994,Agricultural area (Ha) ,20336,290,584,1025,872,966,sass,15143,,,,,High-income,Latin America and the Caribbean
+Barbados ,1989,Agricultural area (Ha) ,21560,2146,660,552,294,366,669,1938,4680,9605,650,,High-income,Latin America and the Caribbean
+Brazil,1996,Agricultural area (Ha) ,353611246,280956,637186,2543527,4420526,9799204,25438629,27455753,32919190,50436030,40186297,159493948,Upper-middle-income,Latin America and the Caribbean
+Chile,1997,Agricultural area (Ha) ,26502363,20944,43145,174216,355137,672098,1363334,1290506,1356763,1985089,1625089,17616042,Upper-middle-income,Latin America and the Caribbean
+Colombia,2001,Agricultural area (Ha) ,50705453,191820,387632,1356816,2042050,3127283,6884453,7487517,7566533,11598122,10063227,,Upper-middle-income,Latin America and the Caribbean
+Dominica ,1995,Agricultural area (Ha) ,21146,1783,3196,4618,2942,1181,2119,2112,1902,1293,,,Upper-middle-income,Latin America and the Caribbean
+Ecuador,1999-2000,Agricultural area (Ha) ,12355831,95834,156016,522375,688987,1017807,2372027,2242409,1666879,3593497,,,Upper-middle-income,Latin America and the Caribbean
+Guatemala,2003,Agricultural area (Ha) ,3750855,435318,251735,359828,345045,200284,1353840,121327,109198,167520,247923,158837,Lower-middle-income,Latin America and the Caribbean
+Honduras,1993,Agricultural area (Ha) ,3637469,,,280531,249098,369364,2738476,,,,,,Lower-middle-income,Latin America and the Caribbean
+Jamaica,1996,Agricultural area (Ha) ,407434,43459,38215,63762,26217,17732,23774,18319,23165,152791,,,Upper-middle-income,Latin America and the Caribbean
+Nicaragua,2001,Agricultural area (Ha) ,6254514,15878,29029,132712,224205,473233,1247190,1192009,1039403,1900855,,,Lower-middle-income,Latin America and the Caribbean
+Panama,2001,Agricultural area (Ha) ,2769529,17273,27539,76050,101864,199721,484939,493790,419984,416101,180680,351587,Upper-middle-income,Latin America and the Caribbean
+Paraguay,1991,Agricultural area (Ha) ,23817737,8499,31431,191374,430658,806802,857909,502648,569169,1050034,1010952,18358261,Lower-middle-income,Latin America and the Caribbean
+Peru ,1994,Agricultural area (Ha) ,35381809,,,1927545,1776221,1559312,2654079,27464652,,,,,Upper-middle-income,Latin America and the Caribbean
+Puerto Rico ,2002,Agricultural area (Ha) ,271440,,,18945,23375,30489,46597,40003,112031,,,,High-income,Latin America and the Caribbean
+Saint Lucia,1996,Agricultural area (Ha) ,20770,6457,3426,4103,921,662,5201,,,,,,Upper-middle-income,Latin America and the Caribbean
+Saint Vincent and the Grenadines,2000,Agricultural area (Ha) ,7199,1335,1477,1816,711,530,1330,,,,,,Upper-middle-income,Latin America and the Caribbean
+Trinidad and Tobago,2004,Agricultural area (Ha) ,84990,2847,4632,18361,11643,4949,6526,2150,2003,2857,29022,,High-income,Latin America and the Caribbean
+Uruguay,2000,Agricultural area (Ha) ,16419683,,,16516,47611,97841,285254,472928,910286,2162836,2725637,9700774,Upper-middle-income,Latin America and the Caribbean
+Venezuela (Bolivarian Republic of),1996-1997,Agricultural area (Ha) ,30071192,20777,83678,373464,481418,748337,1516983,1810573,2442875,4636937,3989406,13966744,Upper-middle-income,Latin America and the Caribbean
+Guadeloupe ,1989,Agricultural area (Ha) ,46740,2409,5926,15393,7539,3489,11984,,,,,,No income classification,Latin America and the Caribbean
+Martinique,1989,Agricultural area (Ha) ,37173,3181,2931,7286,4212,3346,16217,,,,,,No income classification,latin America and the Caribbean
+St. Kitts & Nevis,1987,Agricultural area (Ha) ,8870,,,,,,,,,,,,High-income,latin America and the Caribbean
+Algeria,2001,Agricultural area (Ha) ,8458680,70516,162315,722275,1200598,1896466,2484971,930765,532146,458628,,,Upper-middle-income,Middle East and North Africa
+Egypt,1999-2000,Agricultural area (Ha) ,3750699,1403153,665914,684168,353250,236010,408204,,,,,,Lower-middle-income,Middle East and North Africa
+Iran (Islamic Republic of),2003,Agricultural area (Ha) ,17665198,407070,655129,2377091,3230892,3788275,3736337,1547657,836590,544556,196293,345308,Upper-middle-income,Middle East and North Africa
+Jordan,1997,Agricultural area (Ha) ,278589,12003,60857,41892,41032,48787,25734,18871,29413,,,,Upper-middle-income,Middle East and North Africa
+Lebanon,1998,Agricultural area (Ha) ,247940,48648,37716,62649,23517,26246,26518,22646,,,,,Upper-middle-income,Middle East and North Africa
+Morocco,1996,Agricultural area (Ha) ,8732223,170361,420577,1495239,1894722,1880472,1526298,585157,759397,,,,Lower-middle-income,Middle East and North Africa
+Qatar,2000-2001,Agricultural area (Ha) ,42328,547,246,671,1047,2276,6750,7680,23111,,,,High-income,Middle East and North Africa
+Yemen,2002,Agricultural area (Ha) ,1609486,250259,168357,287761,903109,,,,,,,,Lower-middle-income,Middle East and North Africa
+Libya,1987,Agricultural area (Ha) ,2495906,,,,,,,,,,,,Upper-middle-income,Middle East and North Africa
+Djibouti,1995,Agricultural area (Ha) ,,,,,,,,,,,,,Lower-middle-income,Middle East and North Africa
+India,2001,Agricultural area (Ha) ,159394000,29806000,32129000,49788000,26579000,13220000,7872000,,,,,,Lower-middle-income,South Asia
+Pakistan,2000,Agricultural area (Ha) ,20406782,1183789,1981277,5699287,3891228,3324310,2355906,1970985,,,,,Lower-middle-income,South Asia
+Côte d'Ivoire,2001,Agricultural area (Ha) ,4351663,202483,235993,672454,967115,1178444,1095174,,,,,,Lower-middle-income,Sub-Saharan Africa
+Namibia,1996-1997,Agricultural area (Ha) ,295632,8477,38199,159865,72595,11901,3215,1380,,,,,Upper-middle-income,Sub-Saharan Africa
+Senegal,1998-1999,Agricultural area (Ha) ,1877684,45383,106628,473239,632071,458886,161477,,,,,,Lower-middle-income,Sub-Saharan Africa
+Réunion,2000,Agricultural area (Ha) ,43691,820,2172,8536,12927,6359,12877,,,,,,No income classification,Sub-Saharan Africa
+Guinea Bissau,1988,Agricultural area (Ha) ,96375,,,,,,,,,,,,Low income,Sub-Saharan Africa
+Lesotho,1989-1990,Agricultural area (Ha) ,331000,,,,,,,,,,,,Lower-middle-income,Sub-Saharan Africa
+Malawi,1993,Agricultural area (Ha) ,1167240,,,,,,,,,,,,Low income,Sub-Saharan Africa
+Mozambique,1999-2000,Agricultural area (Ha) ,3925324,,,,,,,,,,,,Low income,Sub-Saharan Africa
+Mali,2004-2005,Agricultural area (Ha) ,,,,,,,,,,,,,Low-income,Sub-Saharan Africa
+Togo,1996,Agricultural area (Ha) ,,,,,,,,,,,,,Low-income,Sub-Saharan Africa
+Zambia,1990,Agricultural area (Ha) ,,,,,,,,,,,,,Lower-middle-income,Sub-Saharan Africa
+Cook Islands,2000,Agricultural area (Ha) ,1029,445,301,283,,,,,,,,,No income classification,unclassified
+French Guiana,1989,Agricultural area (Ha) ,20642,392,1791,5189,1751,911,10608,,,,,,No income classification,unclassified
+American Samoa ,2003,Agricultural area (Ha) ,7949,1511,2245,2352,1097,483,261,,,,,,Upper-middle-income,#N/A
+French Polynesia ,1995,Agricultural area (Ha) ,18534,1561,1003,1097,898,857,13118,,,,,,High-income,#N/A
+Grenada ,1995,Agricultural area (Ha) ,14164,2583,1950,2791,1598,980,4262,,,,,,Upper-middle-income,#N/A
+Northern Mariana Islands ,2002,Agricultural area (Ha) ,952,31,70,166,113,115,458,,,,,,High-income,#N/A
+Virgin Islands United States,2002,Agricultural area (Ha) ,3710,,69,128,173,90,451,439,2360,,,,High-income,#N/A
+United States of America,2002,Agricultural area (Ha) ,379712151,,,540430,1446884,4214923,14879051,24204526,34303773,62327929,237794635,,High-income,
+Fiji,1991,Holdings,95400,41320,11211,18703,12703,6332,3173,1407,551,,,,Lower-middle-income,East Asia and the Pacific
+Indonesia,1993,Holdings,19713806,13955905,3312218,2175575,232200,37908,,,,,,,Lower-middle-income,East Asia and the Pacific
+Lao People's Democratic Republic,1998-1999,Holdings,668000,255600,235400,177000,,,,,,,,,Lower-middle-income,East Asia and the Pacific
+Myanmar,2003,Holdings,3464769,1166480,805590,1036189,368928,80824,6758,,,,,,Low-income,East Asia and the Pacific
+Philippines,2002,Holdings,4822739,1935874,1349903,1133549,303139,79608,20666,,,,,,Lower-middle-income,East Asia and the Pacific
+Samoa,1999,Holdings,14734,2797,4693,4422,1816,717,289,,,,,,Lower-middle-income,East Asia and the Pacific
+China,1997,Holdings,193446000,179897000,9497000,3353000,313000,386000,,,,,,,Upper-middle-income,East Asia and the Pacific
+Viet Nam,2001,Holdings,10689753,9077029,1058138,506151,42796,5639,,,,,,,Lower-middle-income,East Asia and the Pacific
+Albania,1998,Holdings,466809,279793,140377,46639,,,,,,,,,Upper-middle-income,Europe and Central Asia
+Bulgaria,2003,Holdings,665500,512500,,131800,,,16100,5100,,,,,Upper-middle-income,Europe and Central Asia
+Georgia,2003-2004,Holdings,729542,512445,167656,37872,6541,2685,1217,497,315,236,78,,Lower-middle-income,Europe and Central Asia
+Kyrgyzstan,2002,Holdings,1130855,964130,78314,56409,18577,7715,4119,740,304,231,171,145,Low-income,Europe and Central Asia
+Lithuania,2003,Holdings,278563,418,21628,131304,64038,38081,17224,3593,1351,617,309,,Upper-middle-income,Europe and Central Asia
+Romania,2002,Holdings,4484893,2221508,897612,1027776,263715,49151,10724,3965,10442,,,,Upper-middle-income,Europe and Central Asia
+Serbia,2002,Holdings,778891,214388,145929,244064,131438,36772,6300,,,,,,Upper-middle-income,Europe and Central Asia
+Turkey,2001,Holdings,3076650,522990,539816,950840,560049,327363,153685,17429,3901,520,57,,Upper-middle-income,Europe and Central Asia
+Austria,1999-2000,Holdings,199470,,29110,43440,38170,44760,35080,5980,2930,,,,High-income,High-income 
+Belgium,1999-2000,Holdings,61710,,10610,8420,8300,10140,16720,6230,1290,,,,High-income,High-income 
+Croatia,2003,Holdings,449896,227761,71984,85985,42553,15765,5848,,,,,,High-income,High-income 
+Cyprus,2003,Holdings,45199,24780,7546,7240,2850,1522,845,256,160,,,,High-income,High-income 
+Czech Republic,2000,Holdings,56487,16368,8697,9722,6225,5345,4379,1844,1105,902,752,1148,High-income,High-income 
+Denmark,1999-2000,Holdings,57830,,980,1020,9460,11530,17170,11510,6160,,,,High-income,High-income 
+Estonia,2001,Holdings,68869,13450,14065,16545,10818,7759,4239,973,1020,,,,High-income,High-income 
+Finland,1999-2000,Holdings,81200,,2750,5780,11120,20220,30360,9270,1700,,,,High-income,High-income 
+France,1999-2000,Holdings,663810,,111740,81620,60510,71240,137800,122150,78750,,,,High-income,High-income 
+Germany,1999-2000,Holdings,471960,,37830,79797,73949,87368,114347,54311,16335,4787,1599,1637,High-income,High-income 
+Greece,1999-2000,Holdings,817060,,400690,226500,109000,52670,23920,3350,930,,,,High-income,High-income 
+Guam,2002,Holdings,153,46,24,42,24,10,7,,,,,,High-income,High-income 
+Ireland,2000,Holdings,141530,,3100,8570,16740,34290,54670,19540,4620,,,,High-income,High-income 
+Italy,2000,Holdings,2590674,986031,496231,532431,262536,158495,103599,31288,20063,,,,High-income,High-income 
+Japan,1995,Holdings,3444000,2359000,688000,315000,46000,19000,14000,3000,,,,,High-income,High-income 
+Luxembourg,1999-2000,Holdings,2810,,350,280,270,210,530,900,270,,,,High-income,High-income 
+Malta,2001,Holdings,11959,9086,1752,959,144,18,,,,,,,High-income,High-income 
+Netherlands,1999-2000,Holdings,101550,,16120,15620,15780,17510,28180,7150,1190,,,,High-income,High-income 
+Norway,1999,Holdings,70740,1122,2482,10913,16720,22286,15640,1451,119,7,,,High-income,High-income 
+Poland,2002,Holdings,2933000,977100,517000,629600,426800,266600,96000,12400,3400,2400,1100,600,High-income,High-income 
+Portugal,1999,Holdings,415969,111802,115272,100715,42123,23064,13088,4126,5779,,,,High-income,High-income 
+Qatar,2000-2001,Holdings,3553,2444,189,212,148,157,211,113,79,,,,High-income,High-income 
+Sweden,1999-2000,Holdings,81410,,2780,7000,13960,17040,21650,12540,6440,,,,High-income,High-income 
+Trinidad and Tobago,2004,Holdings,19111,6780,3448,6445,1683,478,220,31,14,9,3,,High-income,High-income 
+United Kingdom,1999-2000,Holdings,233250,,32380,21480,25670,30420,47830,36600,38870,,,,High-income,High-income 
+United States of America,2002,Holdings,2128982,,,228527,211864,297944,459660,344141,244952,201981,139913,,High-income,High-income 
+Canada,1991,Holdings,280043,,6911,9250,10039,14030,38329,55843,51621,58577,35443,,High-income,High-income 
+Hungary,2000,Holdings,966916,260987,128417,185208,108278,131302,98958,45738,8028,,,,High-income,High-income 
+New Zealand,2002,Holdings,70000,,,11750,7300,7300,9946,9254,9700,9578,3022,2150,High-income,High-income 
+Slovakia,2001,Holdings,71038,49809,8188,7265,1682,895,934,486,340,364,353,722,High-income,High-income 
+Slovenia,1991,Holdings,156549,44428,19992,36335,28112,19637,8045,,,,,,High-income,High-income 
+Spain,1999,Holdings,1764456,455424,262835,380293,226005,177104,137010,58994,33278,21594,11919,,High-income,High-income 
+Australia,1990,Holdings,129540,,,3368,3052,4808,9144,12607,17415,27615,19924,31607,High-income,High-income 
+Argentina ,1988,Holdings,378357,,,57057,31680,39074,59129,48006,47083,47772,21101,27455,Upper-middle-income,latin America and the Caribbean
+Bahamas ,1994,Holdings,1760,639,437,360,140,78,50,56,,,,,High-income,latin America and the Caribbean
+Barbados ,1989,Holdings,17178,16315,485,190,44,27,23,26,33,34,1,,High-income,latin America and the Caribbean
+Brazil,1996,Holdings,4838183,512032,471298,796723,622320,701417,814695,400375,246314,165243,58407,49359,Upper-middle-income,Latin America and the Caribbean
+Chile,1997,Holdings,316492,46295,32175,55949,50176,47936,43751,18771,9855,6475,2355,2754,Upper-middle-income,Latin America and the Caribbean
+Colombia,2001,Holdings,2021895,366244,273360,428302,291752,225238,219912,108715,55906,40797,11669,,Upper-middle-income,Latin America and the Caribbean
+Dominica ,1995,Holdings,9026,4800,1922,1654,443,89,69,30,14,5,,,Upper-middle-income,latin America and the Caribbean
+Ecuador,1999-2000,Holdings,842882,248398,117660,169251,101066,75660,76792,34498,12941,6616,,,Upper-middle-income,Latin America and the Caribbean
+Guatemala,2003,Holdings,830684,651874,86759,49570,19833,6243,15569,245,177,203,171,40,Lower-middle-income,Latin America and the Caribbean
+Honduras,1993,Holdings,325750,,,178250,52770,38770,55960,,,,,,Lower-middle-income,Latin America and the Caribbean
+Jamaica,1996,Holdings,187791,130247,28548,22332,3886,1351,795,263,164,205,,,Upper-middle-income,Latin America and the Caribbean
+Nicaragua,2001,Holdings,199549,24837,18341,37174,28232,29541,34869,15565,6996,3994,,,Lower-middle-income,Latin America and the Caribbean
+Panama,2001,Holdings,236613,124720,24433,27369,15724,15353,16253,7555,3282,1522,274,128,Upper-middle-income,Latin America and the Caribbean
+Paraguay,1991,Holdings,307221,29939,30994,61817,66605,66223,31519,7577,4279,3503,1525,3240,Lower-middle-income,Latin America and the Caribbean
+Saint Lucia,1996,Holdings,13366,8394,2402,1975,435,94,66,,,,,,Upper-middle-income,Latin America and the Caribbean
+Saint Vincent and the Grenadines,2000,Holdings,7380,5375,1102,712,121,42,28,,,,,,Upper-middle-income,Latin America and the Caribbean
+Uruguay,2000,Holdings,57131,,,6260,7086,7118,8934,6647,6382,6783,3887,4034,Upper-middle-income,Latin America and the Caribbean
+Venezuela (Bolivarian Republic of),1996-1997,Holdings,500979,42758,70663,128821,75282,59354,51659,27318,18565,15587,6027,4945,Upper-middle-income,Latin America and the Caribbean
+Algeria,2001,Holdings,1023799,223115,128864,239844,181267,142980,88130,14294,4063,1242,,,Upper-middle-income,Middle East and North Africa
+Egypt,1999-2000,Holdings,4541884,3955941,365362,170625,35996,10953,3007,,,,,,Lower-middle-income,Middle East and North Africa
+Iran (Islamic Republic of),2003,Holdings,4332423,2056727,522956,797006,491156,295179,135649,24576,6723,2021,312,118,Upper-middle-income,Middle East and North Africa
+Jordan,1997,Holdings,88452,47509,28728,6532,3291,1778,409,151,54,,,,Upper-middle-income,Middle East and North Africa
+Lebanon,1998,Holdings,194829,141594,27434,19536,3127,1983,911,244,,,,,Upper-middle-income,Middle East and North Africa
+Morocco,1996,Holdings,1496349,380039,272412,411967,247766,125169,47985,7829,3182,,,,Lower-middle-income,Middle East and North Africa
+Yemen,2002,Holdings,1180105,865733,124052,107170,83150,,,,,,,,Lower-middle-income,Middle East and North Africa
+Libya,1987,Holdings,175528,25213,17654,43904,40406,28285,15987,393,686,,,,Upper-middle-income,Middle East and North Africa
+Djibouti,1995,Holdings,1135,944,191,,,,,,,,,,Lower-middle-income,Middle East and North Africa
+India,2001,Holdings,119894000,75390000,22687000,16639000,3948000,1004000,226000,,,,,,Lower-middle-income,South Asia
+Nepal,2002,Holdings,3364139,2521292,588649,228840,21575,3783,,,,,,,Low-income,South Asia
+Pakistan,2000,Holdings,6620054,2389423,1425370,1857166,580200,260791,87408,19696,,,,,Lower-middle-income,South Asia
+Burkina Faso,1993,Holdings,886638,114377,172894,365295,186194,47878,,,,,,,Low-income,Sub-Saharan Africa
+Côte d'Ivoire,2001,Holdings,1117667,470433,158933,215974,148516,91416,32395,,,,,,Lower-middle-income,Sub-Saharan Africa
+Democratic Republic of the Congo,1990,Holdings,4479600,3882900,468100,128600,,,,,,,,,Low-income,Sub-Saharan Africa
+Ethiopia ,2001-2002,Holdings,10758597,6762166,2612288,1276773,97037,10333,,,,,,,Low-income,Sub-Saharan Africa
+Namibia,1996-1997,Holdings,102357,14742,25115,50012,11493,861,119,15,,,,,Upper-middle-income,Sub-Saharan Africa
+Senegal,1998-1999,Holdings,437037,91532,72226,142213,90669,34326,6071,,,,,,Lower-middle-income,Sub-Saharan Africa
+Uganda,1991,Holdings,1704721,839369,411810,296560,97013,59969,,,,,,,Low-income,Sub-Saharan Africa
+Lesotho,1989-1990,Holdings,229300,107400,67000,46800,8100,,,,,,,,Lower-middle-income,Sub-Saharan Africa
+Malawi,1993,Holdings,1561416,1212967,270326,78123,,,,,,,,,Low income,Sub-Saharan Africa
+Mozambique,1999-2000,Holdings,3037782,1633986,922603,426665,49941,3939,488,69,37,21,11,22,Low income,Sub-Saharan Africa
+Mali,2004-2005,Holdings,805194,255596,108998,189636,142932,79065,28967,,,,,,Low-income,Sub-Saharan Africa
+Togo,1996,Holdings,842124,81620,165413,365412,179777,45800,4102,,,,,,Low-income,Sub-Saharan Africa
+Zambia,1990,Holdings,520520,479717,29950,8801,2052,,,,,,,,Lower-middle-income,Sub-Saharan Africa
+Cook Islands,2000,Holdings,1721,1403,236,82,,,,,,,,,No income classification,unclassified
+French Guiana,1989,Holdings,4480,729,1403,1902,269,68,109,,,,,,No income classification,unclassified
+Martinique,1989,Holdings,15460,9830,2086,2427,634,252,231,,,,,,No income classification,unclassified
+Réunion,2000,Holdings,9387,2246,1679,2769,1988,485,220,,,,,,No income classification,unclassified
+American Samoa ,2003,Holdings,7094,4064,1867,926,189,40,8,,,,,,Upper-middle-income,#N/A
+French Polynesia ,1995,Holdings,6223,4789,733,388,139,64,110,,,,,,High-income,#N/A
+Grenada ,1995,Holdings,18277,15534,1372,978,243,74,76,,,,,,Upper-middle-income,#N/A
+Guinea ,1995,Holdings,442168,150950,137247,123732,30239,,,,,,,,Low-income,#N/A
+Korea Rep. of ,1990,Holdings,1768501,1051861,543182,173458,,,,,,,,,High-income,#N/A
+Latvia ,2001,Holdings,180263,62,11060,35630,39967,43777,36697,9631,2520,689,230,,Upper-middle-income,#N/A
+Northern Mariana Islands ,2002,Holdings,214,56,59,59,18,8,14,,,,,,High-income,#N/A
+Peru ,1994,Holdings,1756141,,,1222935,261958,127596,92004,51648,,,,,Upper-middle-income,#N/A
+Puerto Rico ,2002,Holdings,17659,,,9310,3461,2287,1528,572,501,,,,High-income,#N/A
+Switzerland ,1990,Holdings,108296,21381,7724,11988,15543,31006,19432,1115,107,,,,High-income,#N/A
+Thailand ,1993,Holdings,5647490,1114038,1272048,2102358,912378,203861,36688,6119,,,,,Upper-middle-income,#N/A
+Virgin Islands United States,2002,Holdings,191,,95,43,24,7,14,6,2,,,,High-income,#N/A
+Guadeloupe ,1989,Holdings,16272,5043,4441,5204,1163,272,149,,,,,,No income classification,#N/A
+Guinea Bissau,1988,Holdings,84221,59120,14809,8531,1590,171,,,,,,,Low income,#N/A
+St. Kitts & Nevis,1987,Holdings,3269,,3148,87,11,23,,,,,,,High-income,#N/A
