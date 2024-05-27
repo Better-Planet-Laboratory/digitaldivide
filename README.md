@@ -1,4 +1,4 @@
-# Supplementary Information: Mehrabi et al. The global divide in data-driven farming. Nature Sustainability. 2020.
+# The global divide in data-driven farming. Nature Sustainability. 2020.
 
 This repository contains data and code for reproducing the results of the paper Mehrabi et al.  The global divide in data-driven farming. Nature Sustainability. 2020. https://doi.org/10.1038/s41893-020-00631-0. .
 
